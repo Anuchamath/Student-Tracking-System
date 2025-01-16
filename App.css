@@ -1,52 +1,131 @@
+/* General App Styles */
 .App {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Header Styles */
 .App-header {
   background-color: #282c34;
-  padding: 20px;
+  padding: 40px;
   color: white;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  text-align: left;
 }
 
+.App-header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Form Styling */
 form {
-  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
+}
+
+input, button {
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 
 input {
-  margin: 5px;
-  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  padding: 12px 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button {
-  padding: 10px 20px;
+  width: 60%;
+  max-width: 200px;
+  padding: 12px;
   background-color: #61dafb;
+  color: white;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #21a1f1;
 }
 
+/* Student List Styles */
 .student-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
   justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .student-card {
-  background-color: #f9f9f9;
+  background-color: #fff;
   border: 1px solid #ddd;
-  padding: 10px;
-  width: 200px;
-  border-radius: 5px;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .student-card h2 {
   margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
 }
 
 .student-card p {
-  margin: 5px 0;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 28px;
+  }
+
+  .student-list {
+    padding: 0;
+  }
+
+  .student-card {
+    width: 100%;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  input, button {
+    width: 100%;
+  }
 }
